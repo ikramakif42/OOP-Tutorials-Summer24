@@ -2,7 +2,7 @@ package tabriji;
 
 import java.util.Scanner;
 
-public class UserInput {
+public class User_Input {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in); //initialization
