@@ -13,6 +13,9 @@ public class HelloController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
-    public void newButtonOnClick(ActionEvent actionEvent) {
+    @FXML
+    public void newButtonOnClick(ActionEvent actionEvent) { // In-order to update the controller using the
+                                                            // FXMLManager plugin right-click on the .fxml file and the
+                                                            // option to update controller will appear.
     }
 }
