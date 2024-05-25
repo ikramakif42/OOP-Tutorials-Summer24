@@ -1,4 +1,4 @@
-package tabriji;
+package calculator_code_pack;
 
 public class Calculator {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package tabriji;
+package calculator_code_pack;
 
 import java.util.Scanner;
 
