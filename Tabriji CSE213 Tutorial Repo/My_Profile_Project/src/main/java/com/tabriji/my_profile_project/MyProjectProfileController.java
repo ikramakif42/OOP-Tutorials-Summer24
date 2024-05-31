@@ -1,20 +1,66 @@
 package com.tabriji.my_profile_project;
 
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 
 public class MyProjectProfileController {
     @javafx.fxml.FXML
-    private TextField nameTextField;
-    @javafx.fxml.FXML
     private AnchorPane parentAnchorPane;
     @javafx.fxml.FXML
-    private DatePicker dobDatePicker;
+    private RadioButton foundationRadioButton;
+    @javafx.fxml.FXML
+    private RadioButton minorRadioButton;
+    @javafx.fxml.FXML
+    private TextField capacityTextField;
+    @javafx.fxml.FXML
+    private ComboBox<String> labCodeComboBox;
+    @javafx.fxml.FXML
+    private Label courseNvalueLabel;
+    @javafx.fxml.FXML
+    private TextArea labTextArea;
+    @javafx.fxml.FXML
+    private Label LabNvalueLabel;
+    @javafx.fxml.FXML
+    private CheckBox isLabCheckBox;
+    @javafx.fxml.FXML
+    private ComboBox<String> labTimeComboBox;
+    @javafx.fxml.FXML
+    private TextArea courseTextArea;
+    @javafx.fxml.FXML
+    private TextField courseNameTextField;
+    @javafx.fxml.FXML
+    private ComboBox<String> courseCodeComboBox;
+    @javafx.fxml.FXML
+    private RadioButton majorRadioButton;
+    @javafx.fxml.FXML
+    private DatePicker courseStartDatePicker;
+    @javafx.fxml.FXML
+    private RadioButton coreRadioButton;
+    @javafx.fxml.FXML
+    private TextField facultyNameTextField;
+    @javafx.fxml.FXML
+    private ComboBox<String> courseTimeComboBox;
+    @javafx.fxml.FXML
+    private TextField sectionNumTextField;
 
     @javafx.fxml.FXML
     public void initialize() {
+        courseCodeComboBox.getItems().addAll("PHY101", "ENG101", "MAT104", "CSE203", "CSE213", "CSE303", "CSE421", "CSE425",
+                "CSE451", "CSE464");
+        labCodeComboBox.getItems().addAll("PHY101L", "CSE203L", "CSE213L", "CSE303L");
+
+        ToggleGroup toggle = new ToggleGroup();
+
+        foundationRadioButton.setToggleGroup(toggle);
+        coreRadioButton.setToggleGroup(toggle);
+        majorRadioButton.setToggleGroup(toggle);
+        minorRadioButton.setToggleGroup(toggle);
+    }
+
+    @javafx.fxml.FXML
+    public void viewCourseInfoButtonOnClick(ActionEvent actionEvent) {
 
     }
 }
