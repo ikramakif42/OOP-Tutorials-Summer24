@@ -84,8 +84,7 @@ public class MyProjectProfileController {
             courseType = "Core";
         } else if (toggle.getSelectedToggle().equals(majorRadioButton)) {
             courseType = "Major";
-        }
-        else {
+        } else {
             courseType = "Minor";
         }
 
@@ -93,10 +92,10 @@ public class MyProjectProfileController {
 
         courseDetail.add(new_course);
 
-        String final_output = "";
+        StringBuilder final_output = new StringBuilder();
         for (Course each_Course : courseDetail) {
-            final_output += (each_Course.toString() + "\n");
+            final_output.append(each_Course.toString()).append("\n");
         }
-        courseTextArea.setText(final_output);
+        courseTextArea.setText(final_output.toString());
     }
 }
