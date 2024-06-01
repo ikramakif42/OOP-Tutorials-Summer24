@@ -54,13 +54,10 @@ public class MyProjectProfileController {
     @javafx.fxml.FXML
     public void initialize() {
 
-        courseCodeComboBox.getItems().addAll("PHY101", "ENG101", "MAT104", "CSE203", "CSE213", "CSE303", "CSE421", "CSE425",
-                "CSE451", "CSE464");
-        courseTimeComboBox.getItems().addAll("ST:08:00-09:30", "ST:09:40-11:10", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "CSE425",
-                "ST:08:00-09:30", "ST:08:00-09:30");
+        courseCodeComboBox.getItems().addAll("PHY101", "ENG101", "MAT104", "CSE203", "CSE213", "CSE303", "CSE421", "CSE425", "CSE451", "CSE464");
+        courseTimeComboBox.getItems().addAll("ST:08:00-09:30", "ST:09:40-11:10", "ST:11:20-12:50", "ST:13:00-14:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "CSE425", "ST:08:00-09:30", "ST:08:00-09:30");
         labCodeComboBox.getItems().addAll("PHY101L", "CSE203L", "CSE213L", "CSE303L");
-        labTimeComboBox.getItems().addAll("ST:08:00-09:30", "ST:09:40-11:10", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "CSE425",
-                "ST:08:00-09:30", "ST:08:00-09:30");
+        labTimeComboBox.getItems().addAll("ST:08:00-09:30", "ST:09:40-11:10", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "CSE425", "ST:08:00-09:30", "ST:08:00-09:30");
 //
         toggle = new ToggleGroup(); // initialisation
 //
@@ -70,6 +67,7 @@ public class MyProjectProfileController {
         minorRadioButton.setToggleGroup(toggle);
 //
         courseDetail = new ArrayList<Course>();
+
     }
 
     @javafx.fxml.FXML

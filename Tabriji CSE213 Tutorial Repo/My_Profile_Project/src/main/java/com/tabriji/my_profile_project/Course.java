@@ -109,13 +109,13 @@ public class Course {
     public String toString() {
         return "Course: " +
                 "Course Name= " + courseName + '\'' +
-                ", course Code= " + courseCode + '\'' +
-                ", course Time= " + courseTime + '\'' +
-                ", section Num= " + sectionNum +
-                ", lab Code= " + labCode + '\'' +
-                ", lab Time= " + labTime + '\'' +
-                ", course Type= " + courseType + '\'' +
-                ", faculty Name= " + facultyName + '\'' +
-                ", capacity= " + capacity;
+                ", Course Code= " + courseCode + '\'' +
+                ", Course Time= " + courseTime + '\'' +
+                ", Section Number= " + sectionNum +
+                ", Lab Code= " + labCode + '\'' +
+                ", Lab Time= " + labTime + '\'' +
+                ", Course Type= " + courseType + '\'' +
+                ", Faculty Name= " + facultyName + '\'' +
+                ", Capacity= " + capacity;
     }
 }
