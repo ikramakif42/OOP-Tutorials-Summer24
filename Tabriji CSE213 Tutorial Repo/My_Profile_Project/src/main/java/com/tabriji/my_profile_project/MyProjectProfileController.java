@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
+import java.util.ArrayList;
+
 
 public class MyProjectProfileController {
     @javafx.fxml.FXML
@@ -45,22 +47,56 @@ public class MyProjectProfileController {
     @javafx.fxml.FXML
     private TextField sectionNumTextField;
 
+    private ArrayList<Course> courseDetail;
+
+    private ToggleGroup toggle;
+
     @javafx.fxml.FXML
     public void initialize() {
+
         courseCodeComboBox.getItems().addAll("PHY101", "ENG101", "MAT104", "CSE203", "CSE213", "CSE303", "CSE421", "CSE425",
                 "CSE451", "CSE464");
+        courseTimeComboBox.getItems().addAll("ST:08:00-09:30", "ST:09:40-11:10", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "CSE425",
+                "ST:08:00-09:30", "ST:08:00-09:30");
         labCodeComboBox.getItems().addAll("PHY101L", "CSE203L", "CSE213L", "CSE303L");
-
-        ToggleGroup toggle = new ToggleGroup();
-
+        labTimeComboBox.getItems().addAll("ST:08:00-09:30", "ST:09:40-11:10", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "ST:08:00-09:30", "CSE425",
+                "ST:08:00-09:30", "ST:08:00-09:30");
+//
+        toggle = new ToggleGroup(); // initialisation
+//
         foundationRadioButton.setToggleGroup(toggle);
         coreRadioButton.setToggleGroup(toggle);
         majorRadioButton.setToggleGroup(toggle);
         minorRadioButton.setToggleGroup(toggle);
+//
+        courseDetail = new ArrayList<Course>();
     }
 
     @javafx.fxml.FXML
     public void viewCourseInfoButtonOnClick(ActionEvent actionEvent) {
 
+        String courseType;
+        if (toggle.getSelectedToggle() == null) {
+            courseType = "Not Declared";
+        } else if (toggle.getSelectedToggle().equals(foundationRadioButton)) {
+            courseType = "Foundation";
+        } else if (toggle.getSelectedToggle().equals(coreRadioButton)) {
+            courseType = "Core";
+        } else if (toggle.getSelectedToggle().equals(majorRadioButton)) {
+            courseType = "Major";
+        }
+        else {
+            courseType = "Minor";
+        }
+
+        Course new_course = new Course(courseType, courseNameTextField.getText(), courseCodeComboBox.getValue(), courseTimeComboBox.getValue(), Integer.parseInt(sectionNumTextField.getText()), labCodeComboBox.getValue(), labTimeComboBox.getValue(), facultyNameTextField.getText(), Integer.parseInt(capacityTextField.getText()));
+
+        courseDetail.add(new_course);
+
+        String final_output = "";
+        for (Course each_Course : courseDetail) {
+            final_output += (each_Course.toString() + "\n");
+        }
+        courseTextArea.setText(final_output);
     }
 }

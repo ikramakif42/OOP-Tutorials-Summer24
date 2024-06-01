@@ -16,7 +16,7 @@ public class MainApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("my_project_profile-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Profile Manager!");
+        stage.setTitle("Basic Course Manager!");
         stage.setScene(scene);
         stage.show();
     }
