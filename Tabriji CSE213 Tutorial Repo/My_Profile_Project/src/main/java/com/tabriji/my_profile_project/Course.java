@@ -117,5 +117,6 @@ public class Course {
                 ", Course Type= " + courseType + '\'' +
                 ", Faculty Name= " + facultyName + '\'' +
                 ", Capacity= " + capacity;
+        // Team
     }
 }
