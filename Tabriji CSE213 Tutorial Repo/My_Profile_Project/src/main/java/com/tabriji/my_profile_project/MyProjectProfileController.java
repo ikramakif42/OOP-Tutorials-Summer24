@@ -94,6 +94,6 @@ public class MyProjectProfileController {
         for (Course each_Course : courseDetail) {
             final_output.append(each_Course.toString()).append("\n");
         }
-        courseTextArea.setText(final_output.toString());
+        courseTextArea.setText(final_output.toString()); // check
     }
 }
