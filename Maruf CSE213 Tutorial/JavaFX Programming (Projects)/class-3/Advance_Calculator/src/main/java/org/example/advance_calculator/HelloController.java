@@ -89,7 +89,7 @@ public class HelloController {
                     return;
             }
             display.setText(String.valueOf(result));
-            currentInput="";
+            currentInput=Double.toString(result); // wrong approach ""
             operator="";
 
 
