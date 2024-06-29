@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tabriji.tutorial_two.my_first_fxml_project.DummyFile"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Button layoutX="53.0" layoutY="124.0" onAction="#addToArrayListBtnOnClick" prefHeight="26.0" prefWidth="212.0" style="-fx-background-radius: 45;" text="Add New Student to ArrayList" />
+        <TextField fx:id="idTxt" layoutX="150.0" layoutY="14.0" onMouseClicked="#idTxtOnMouseClick" prefHeight="26.0" prefWidth="111.0" />
+        <Label layoutX="40.0" layoutY="18.0" prefHeight="18.0" prefWidth="90.0" text="Enter ID:" />
+        <TextField fx:id="nameTxt" layoutX="150.0" layoutY="48.0" onMouseClicked="#nameTxtOnMouseClick" prefHeight="26.0" prefWidth="111.0" />
+        <Label layoutX="40.0" layoutY="52.0" prefHeight="18.0" prefWidth="90.0" text="Enter Name:" />
+        <TextField fx:id="cgpaTxt" layoutX="150.0" layoutY="81.0" onMouseClicked="#cgpaTxtOnMouseClick" prefHeight="26.0" prefWidth="111.0" />
+        <Label layoutX="40.0" layoutY="85.0" prefHeight="18.0" prefWidth="90.0" text="Enter Cgpa:" />
+        <Button layoutX="50.0" layoutY="240.0" onAction="#createFileBtnOnClick" prefHeight="34.0" prefWidth="218.0" style="-fx-background-radius: 45;" text="Save ArrayList to File Student" />
+        <CheckBox fx:id="isTextFileChkBox" layoutX="32.0" layoutY="200.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="142.0" text="Save as Text file" />
+        <CheckBox fx:id="isBinFileChkBox" layoutX="186.0" layoutY="200.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="150.0" text="Save as Binary file" />
+        <Button layoutX="14.0" layoutY="302.0" mnemonicParsing="false" onAction="#readFromTextFileBtnOnClick" prefHeight="26.0" prefWidth="142.0" text="Read From Stud.txt" />
+        <Button layoutX="164.0" layoutY="302.0" mnemonicParsing="false" onAction="#readFromBinFileBtnOnClick" prefHeight="26.0" prefWidth="142.0" text="Read From Stud.bin" />
+        <TextArea fx:id="outputTxtArea" layoutX="32.0" layoutY="349.0" prefHeight="167.0" prefWidth="255.0" />
+        <Button layoutX="54.0" layoutY="162.0" onAction="#showArrayListBtnOnClick" prefHeight="26.0" prefWidth="212.0" style="-fx-background-radius: 100;" text="Show Student ArrayList to Console" />
+        <ComboBox fx:id="deptComboBox" layoutX="360.0" layoutY="14.0" onAction="#deptComboBoxIsUpdated" prefHeight="26.0" prefWidth="174.0" promptText="Click to Expand" />
+        <Label fx:id="deptLabel" layoutX="358.0" layoutY="52.0" prefHeight="18.0" prefWidth="226.0" text="Label" />
+        <TableView fx:id="tableView" layoutX="360.0" layoutY="82.0" prefHeight="200.0" prefWidth="360.0">
+            <columns>
+                <TableColumn fx:id="lastNameColumn" onEditCommit="#changeLasttNameCellEvent" prefWidth="85.5999755859375" text="Last Name" />
+                <TableColumn fx:id="firstNameColumn" onEditCommit="#changeFirstNameCellEvent" prefWidth="93.5999755859375" text="First Name" />
+                <TableColumn fx:id="birthdayColumn" prefWidth="145.5999755859375" text="Birthday" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+        <Button layoutX="329.0" layoutY="456.0" mnemonicParsing="false" onAction="#goToScene2ButtonOnClick" prefHeight="26.0" prefWidth="142.0" text="Go to Scene 2" />
+        <Button layoutX="496.0" layoutY="456.0" mnemonicParsing="false" onAction="#goToStage2ButtonOnClick" prefHeight="26.0" prefWidth="128.0" text="Go to Stage 2" />
+        <TextField fx:id="firstNameTextField" layoutX="331.0" layoutY="302.0" prefHeight="25.0" prefWidth="128.0" promptText="Enter first Name" />
+        <TextField fx:id="lastNameTextField" layoutX="486.0" layoutY="302.0" prefHeight="26.0" prefWidth="128.0" promptText="Enter Last Name" />
+        <DatePicker fx:id="birthdayDatePicker" layoutX="331.0" layoutY="336.0" prefHeight="26.0" prefWidth="187.0" promptText="Select Birthday" />
+        <Button layoutX="331.0" layoutY="373.0" mnemonicParsing="false" onAction="#addNewPersonButtonOnClick" prefHeight="26.0" prefWidth="142.0" text="Add a new Person" />
+        <Button layoutX="331.0" layoutY="407.0" mnemonicParsing="false" onAction="#detailedPersonViewButtonOnClick" prefHeight="26.0" prefWidth="142.0" text="Detailed Person View" />
+        <Button layoutX="496.0" layoutY="373.0" mnemonicParsing="false" onAction="#deletePersonsButtonOnClick" prefHeight="26.0" prefWidth="128.0" text="Delete Person (s)" />
+    </children>
+</AnchorPane>
