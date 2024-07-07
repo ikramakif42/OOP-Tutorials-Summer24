@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.summermid.MainController">
+   <children>
+      <TableView fx:id="tableView" layoutX="41.0" layoutY="116.0" prefHeight="200.0" prefWidth="511.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="titleCol" prefWidth="114.0" text="Title" />
+            <TableColumn fx:id="genreCol" minWidth="0.0" prefWidth="109.0" text="Genre" />
+            <TableColumn fx:id="priceCol" prefWidth="118.0" text="Price" />
+            <TableColumn fx:id="bookCountCol" prefWidth="94.0" text="Book Count" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
