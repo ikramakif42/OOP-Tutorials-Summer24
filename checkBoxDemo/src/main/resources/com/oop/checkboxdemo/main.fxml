@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oop.checkboxdemo.MainController">
+   <children>
+      <CheckBox fx:id="multiGpuCheckBox" layoutX="82.0" layoutY="77.0" mnemonicParsing="false" onAction="#swichMultiGpuInput" text="Multi GPU?" />
+      <TextField fx:id="gpuNameField" layoutX="132.0" layoutY="175.0" />
+      <Label fx:id="gpuNameLable" layoutX="54.0" layoutY="179.0" text="GPU Name: " />
+      <TextField fx:id="vramField" layoutX="132.0" layoutY="210.0" />
+      <Label fx:id="vramLable" layoutX="54.0" layoutY="214.0" text="VRAM: " />
+   </children>
+</AnchorPane>
