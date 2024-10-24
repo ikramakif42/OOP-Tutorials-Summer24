@@ -10,17 +10,17 @@ public class HelloController {
 
     @FXML
     private TextField display;
-
-    private String currentInput = "";
+    private String currentInput="";
     private String operator="";
     private double firstOperand=0;
+
+
 
 
     @FXML
     public void handleButtonAction(ActionEvent event) {
         String buttonText = ((Button) event.getSource()).getText();
-
-        switch (buttonText) {
+        switch (buttonText){
             case "C":
                 clear();
                 break;
@@ -37,27 +37,30 @@ public class HelloController {
                 handleNumberOrDecimal(buttonText);
                 break;
 
-
         }
     }
+
 
     private void handleOperator(String buttonText){
         if (!currentInput.isEmpty()){
             firstOperand = Double.parseDouble(currentInput);
             operator = buttonText;
-            currentInput = "";
+            currentInput="";
             display.setText(firstOperand+" "+operator+" ");
 
+
         }
+
 
     }
 
     private void handleNumberOrDecimal(String buttonText){
-        if (buttonText.equals(".") && currentInput.contains(".")){
+        if(buttonText.equals(".")&& currentInput.contains(".")){
             return;
         }
         currentInput +=buttonText;
         display.setText(currentInput);
+
 
     }
 
@@ -78,22 +81,23 @@ public class HelloController {
                 case "/":
                     if (secondOperand!=0){
                         result = firstOperand / secondOperand;
-                    }else{
+                    }else {
                         display.setText("Error");
                         clear();
                         return;
                     }
-                    break;
-
+                break;
                 default:
                     return;
             }
             display.setText(String.valueOf(result));
-            currentInput=Double.toString(result); // wrong approach ""
+            currentInput=Double.toString(result);
             operator="";
 
-
         }
+
+
+
     }
 
     private void clear(){
@@ -101,6 +105,10 @@ public class HelloController {
         operator="";
         firstOperand=0;
         display.setText("");
+        //display.clear();
+
 
     }
+
+
 }
