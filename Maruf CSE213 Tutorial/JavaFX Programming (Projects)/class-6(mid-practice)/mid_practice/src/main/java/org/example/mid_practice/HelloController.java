@@ -82,17 +82,18 @@ public class HelloController implements Initializable {
         // set default value in combo box
         selectProductComboBox.setValue("Select Product");
 
+
         // Initialize Table column and  green word indicate the field name of a person class and another
 
-        productCol.setCellValueFactory(new PropertyValueFactory<Payment,String>("productName"));
-        unitPriceCol.setCellValueFactory(new PropertyValueFactory<Payment,Double>("unitPrice"));
-        quantityCol.setCellValueFactory(new PropertyValueFactory<Payment,Integer>("quantity"));
-        vatCol.setCellValueFactory(new PropertyValueFactory<Payment, Double>("predefinedVat"));
-        vatAmountCol.setCellValueFactory(new PropertyValueFactory<Payment,Double>("vatAmount"));
-        totalAmountCol.setCellValueFactory(new PropertyValueFactory<Payment, Double>("totalAmount"));
+        productCol.setCellValueFactory(new PropertyValueFactory<>("productName"));
+        unitPriceCol.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        vatCol.setCellValueFactory(new PropertyValueFactory<>("predefinedVat"));
+        vatAmountCol.setCellValueFactory(new PropertyValueFactory<>("vatAmount"));
+        totalAmountCol.setCellValueFactory(new PropertyValueFactory<>("totalAmount"));
 
 
-        table.setVisible(true);
+        //table.setVisible(true);
 
         // set multiple selection mode
         table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -114,6 +115,8 @@ public class HelloController implements Initializable {
 
         }else{
             Integer selectedValue = quantityComboBox.getValue();
+
+
             // create payment instance and add ob list to instance of payment
 
             String productname = selectProductComboBox.getValue();
@@ -121,7 +124,7 @@ public class HelloController implements Initializable {
             Integer quantity = quantityComboBox.getValue();
             Double predefinedvat = Double.valueOf(predefinedVatLabel.getText());
             Double parcentage = unitprice*(predefinedvat/100);
-            String s = String.format("%.2f",(quantityComboBox.getValue()*unitprice) + parcentage);
+            String s = String.format("%.2f",(quantity*unitprice) + parcentage);
             Double totalvalue = Double.valueOf(s);
 
 
@@ -134,7 +137,7 @@ public class HelloController implements Initializable {
             selectProductComboBox.setValue("Select Product");
             quantityComboBox.setValue(null);
 
-            // pass the instance of Payment into tabel
+            // pass the instance of Payment into table
             table.getItems().addAll(oblist);
 
 
@@ -212,7 +215,9 @@ public class HelloController implements Initializable {
         Double maximumTkPerUnit= Double.parseDouble(maximumperunitproductcostTextField.getText());
 
         Double totalVat=0.00;
-        for (Payment p : oblist){
+        // store all row's data from table
+        ObservableList<Payment> allobject = table.getItems();
+        for (Payment p : allobject){
             if(p.getUnitPrice()>=maximumTkPerUnit){
                 totalVat+=p.getVatAmount();
             }
@@ -236,11 +241,7 @@ public class HelloController implements Initializable {
             selectedRows=table.getSelectionModel().getSelectedItems();
 
             addAllproduct.removeAll(selectedRows);
-            /* //removeall
-            for (Payment p: selectedRows){
-            addAllproduct.remove(p);
-            }
-             */
+
         }
 
     }
