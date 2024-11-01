@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="50.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.example.martrix_calculator.HelloController">
+    <children>
+        <Label style="-fx-font-size: 24px;" text="Matrix Calculator" />
+        <GridPane hgap="10" vgap="10">
+            <children>
+                <Label text="Matrix A:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="matrixA00" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <TextField fx:id="matrixA01" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <TextField fx:id="matrixA10" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="matrixA11" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+
+                <Label text="Matrix B:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="matrixB00" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="matrixB01" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="matrixB10" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="matrixB11" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <HBox alignment="center" spacing="10">
+            <Button onAction="#handleAdd" text="Add" />
+            <Button onAction="#handleSubtract" text="Subtract" />
+            <Button onAction="#handleMultiply" text="Multiply" />
+            <Button onAction="#handleTransposeA" text="Transpose A" />
+            <Button onAction="#handleDeterminantA" text="Determinant A" />
+            <Button onAction="#handleInverseA" text="Inverse A" />
+            <Button onAction="#handleClear" text="Clear" />
+        </HBox>
+
+        <Label style="-fx-font-size: 18px;" text="Result:" />
+        <GridPane hgap="10" vgap="10">
+            <children>
+                <TextField fx:id="result00" editable="false" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="result01" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <TextField fx:id="result10" editable="false" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="result11" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+    </children>
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+</VBox>
