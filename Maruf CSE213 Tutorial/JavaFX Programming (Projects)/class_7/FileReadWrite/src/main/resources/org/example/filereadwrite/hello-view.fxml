@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.filereadwrite.HelloController">
+  <children>
+    <TextArea fx:id="console" editable="false" layoutX="20.0" layoutY="300.0" prefHeight="250.0" prefWidth="760.0" wrapText="true" />
+    <Label layoutX="20.0" layoutY="20.0" text="First Name:" />
+    <TextField fx:id="firstnameField" layoutX="100.0" layoutY="20.0" prefWidth="200.0" />
+
+    <Label layoutX="20.0" layoutY="60.0" text="Last Name:" />
+    <TextField fx:id="lastnameField" layoutX="100.0" layoutY="60.0" prefWidth="200.0" />
+
+    <Label layoutX="20.0" layoutY="100.0" text="Email:" />
+    <TextField fx:id="emailField" layoutX="100.0" layoutY="100.0" prefWidth="200.0" />
+
+    <Label layoutX="20.0" layoutY="140.0" text="Phone Number:" />
+    <TextField fx:id="phoneField" layoutX="100.0" layoutY="140.0" prefWidth="200.0" />
+
+    <Label layoutX="20.0" layoutY="180.0" text="Address:" />
+    <TextField fx:id="addressField" layoutX="100.0" layoutY="180.0" prefWidth="200.0" />
+
+    <Label layoutX="20.0" layoutY="220.0" text="Gender:" />
+    <TextField fx:id="genderField" layoutX="100.0" layoutY="220.0" prefWidth="200.0" />
+    <Button layoutX="350.0" layoutY="20.0" mnemonicParsing="false" onAction="#readObjectBinaryFileOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="ReadObject" />
+    <Button layoutX="350.0" layoutY="70.0" mnemonicParsing="false" onAction="#writeObjectUsersOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="WriteObject" />
+    <Button layoutX="350.0" layoutY="120.0" mnemonicParsing="false" onAction="#clearFieldsOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="Clear Fields" />
+    <Button layoutX="20.0" layoutY="600.0" mnemonicParsing="false" onAction="#readTextFileOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="Read Text File" />
+    <Button layoutX="190.0" layoutY="600.0" mnemonicParsing="false" onAction="#writeTextFileOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="Write Text File" />
+    <Button layoutX="360.0" layoutY="600.0" mnemonicParsing="false" onAction="#clearTextAreaOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="Clear Console" />
+    <Button layoutX="530.0" layoutY="600.0" mnemonicParsing="false" onAction="#editableOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="Make Editable" />
+
+    <Button layoutX="20.0" layoutY="650.0" mnemonicParsing="false" onAction="#readBinaryFileOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="Read Binary File" />
+    <Button layoutX="190.0" layoutY="650.0" mnemonicParsing="false" onAction="#writeBinaryFileOnMouseClick" prefHeight="40.0" prefWidth="150.0" text="Write Binary File" />
+  </children>
+</AnchorPane>
