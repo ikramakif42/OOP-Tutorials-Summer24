@@ -4,6 +4,9 @@ import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -128,17 +131,29 @@ public class HelloController implements Initializable {
 
 
         User user = new User(firstname, lastname, gender, email, phone, null, address); // Replace `null` with LocalDate if date of birth is needed.
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
 
+        try {
+            fos = new FileOutputStream(f);
+            oos = new ObjectOutputStream(fos);
+            User e = new User();
+            oos.writeObject(e);
 
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileLocation, true))) {
-            oos.writeObject(user);
-        } catch (IOException e) {
-            console.appendText("Error writing user object to file: " + e.getMessage() + "\n");
-            e.printStackTrace();
+        } catch (IOException ex) {
+            Logger.getLogger(Package.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (oos != null) {
+                    oos.close();
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(Package.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
-
-        clearFieldsOnMouseClick(null);
-    }
+        }
 
     @FXML
     public void clearFieldsOnMouseClick(ActionEvent actionEvent) {
