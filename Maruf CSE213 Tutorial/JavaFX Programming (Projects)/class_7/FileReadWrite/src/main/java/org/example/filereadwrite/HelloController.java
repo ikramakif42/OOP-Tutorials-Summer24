@@ -153,7 +153,7 @@ public class HelloController implements Initializable {
             }
 
         }
-        }
+    }
 
     @FXML
     public void clearFieldsOnMouseClick(ActionEvent actionEvent) {
